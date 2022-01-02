@@ -12,6 +12,7 @@ export interface IconProps {
    onclick?: any;
    outlined?: boolean;
    cursor?: boolean;
+   MouseCapture?: any; 
  }
 
  /**
@@ -41,8 +42,25 @@ export interface JContentProps {
    to?:string;
    navigation?:string;
    onclick?:any;
+   MouseCapture?:any;
    cursor?:boolean;
  }
+ /**
+  * 
+  */
+ export interface AnimateAppProps {
+   children?:JSX.Element| JSX.Element[]|string;
+   width?:string;
+   height?:string;
+   display?:string;
+   Bcolor?:string ;
+   padding?:string;
+   overflou?:string;
+   transitionDuration?:string;
+   left?:string;
+   top?:string;
+   anim?:boolean;
+  }
  /**
   * 
   */
@@ -74,4 +92,5 @@ export interface JContentProps {
    children?:JSX.Element| JSX.Element[]|string;
    d?:string;
    Bcolor?:string;
+   cursor?: boolean;
  }

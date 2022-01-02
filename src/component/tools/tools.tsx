@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useDispatch }from 'react-redux'
 import { useState,useEffect } from 'react';
-import { IconProps,JContentProps,AppIconProps,ViweBoxProps,CicleNumberProps,CicleProps } from "./toolsType";
+import { IconProps,JContentProps,AppIconProps,ViweBoxProps,CicleNumberProps,CicleProps,AnimateAppProps} from "./toolsType";
 import './tools.css'
 
 function Icon(props:IconProps):JSX.Element {
-  const {children, fontsize, color, to, navigation, onclick, outlined, margin, rotate, cursor} = props;
+  const {children, fontsize, color, to, navigation, onclick, outlined, margin, rotate, cursor,MouseCapture} = props;
   const dispatch = useDispatch()
   const [Verify, setVerify] = useState({to:'',navigation:''})
 
@@ -25,6 +25,7 @@ function Icon(props:IconProps):JSX.Element {
   {Verify.to.length >=1?
       <Link 
         to={Verify.to} 
+        onMouseUpCapture={MouseCapture}
         onClick={()=>{UPDATED_NAVIGATION(Verify.navigation); if (onclick) onclick()}}
         style={{
           cursor: cursor ? 'pointer' : 'auto',
@@ -38,6 +39,7 @@ function Icon(props:IconProps):JSX.Element {
     :
       <div 
         onClick={onclick} 
+        onMouseUpCapture={MouseCapture}
         style={{
           cursor: cursor ? 'pointer' : 'auto',
           transform: rotate ? `rotate(${rotate}deg)` : 'rotate(0deg)',
@@ -80,7 +82,7 @@ function JContent(props:JContentProps):JSX.Element {
  */
 
 function AppIcon(props:AppIconProps):JSX.Element {
-  const {icon,widht,height,margin,to,navigation,onclick,cursor} = props;
+  const {icon,widht,height,margin,to,navigation,onclick,cursor,MouseCapture} = props;
   const dispatch = useDispatch()
   const [Verify, setVerify] = useState({to:'',navigation:''})
 
@@ -102,6 +104,7 @@ function AppIcon(props:AppIconProps):JSX.Element {
       {Verify.to.length >=1?
       <Link 
         to={Verify.to} 
+        onMouseUpCapture={MouseCapture}
         onClick={()=>{UPDATED_NAVIGATION(Verify.navigation); if (onclick) onclick()}} 
         style={{ 
           backgroundImage: `url(/static/icons/${icon}.png)`, 
@@ -132,6 +135,30 @@ function AppIcon(props:AppIconProps):JSX.Element {
  * 
  */
 
+ function AnimateApp(props:AnimateAppProps) {
+  const {children,width,height,display,Bcolor,padding,overflou,transitionDuration,left,top} = props
+  return(<>
+   <div 
+      style={{
+        overflow: 'auto',
+        overflowX:'hidden',
+        overflowY:'hidden',
+        position:'static',
+
+        display:display?display:'block',
+        width:width?width:'100%',
+        height:height?height:'500px',
+        backgroundColor:Bcolor?Bcolor:'transparent',
+        left:left?left:'0',
+        top:top?top:'0'
+      }}
+      >{children}</div>
+  
+  </>)
+}
+/**
+ * 
+ */
 
 function ViweBox(props:ViweBoxProps) {
   const {children,width,height,display,Bcolor,padding,overflou,transitionDuration} = props
@@ -170,13 +197,13 @@ function CicleNumber(props:CicleNumberProps):JSX.Element {
         height:d?d:'30px',
         backgroundColor:Bcolor?Bcolor:'transparent',
         flexDirection:'column',
-        fontSize:fontSize?fontSize:'22px',
-        fontWeight: '600',
+        fontSize:fontSize?fontSize:'28px',
+        fontWeight: '500',
       }}
       onClick={onclick}
     > 
-      <p style={{marginTop:'-3px'}}>{children}</p>  
-      <span style={{height:'18px',fontSize:'10px',marginTop:'-12px',color:'#858585'}}>{span}</span> 
+      <p style={{marginTop:'0'}}>{children}</p>  
+      <span style={{height:'18px',fontSize:'10px',marginTop:'-6px',color:'#858585'}}>{span}</span> 
     </div>
   </>)
 }
@@ -187,11 +214,11 @@ function CicleNumber(props:CicleNumberProps):JSX.Element {
 
 
 function Cicle(props:CicleProps):JSX.Element {
-  const {children,d,Bcolor} = props
+  const {children,d,Bcolor,cursor} = props
   return(<>
     <div
       style={{
-        cursor:'pointer',
+        cursor: cursor? 'pointer' :'auto' ,
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
@@ -204,4 +231,4 @@ function Cicle(props:CicleProps):JSX.Element {
   </>)
 }
 
-export {Icon,JContent,AppIcon,ViweBox,CicleNumber,Cicle}
+export {Icon,JContent,AppIcon,ViweBox,CicleNumber,Cicle,AnimateApp}
