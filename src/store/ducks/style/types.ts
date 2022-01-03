@@ -1,41 +1,32 @@
 /**
- * Action types
- */
-export enum styleTypes{
-  UPDATED_BACKGROUND = '@style/UPDATED_BACKGROUND',
-  UPDATED_NAVIGATION = '@style/UPDATED_NAVIGATION',
-  UPDATED_STYLE_KEYPAD_RODAPE = '@style/UPDATED_STYLE_KEYPAD_RODAPE',
-  UPDATED_STYLE_TRASITION_KAYPAD = '@style/UPDATED_STYLE_TRASITION_KAYPAD'
-} 
-
-/**
  * Data types
  */
-export interface bg_Main{
-    backgroundColor:string,
-    backgroundImage:string,
-    Matte:string,
+export interface phone_main{
+    what_app:string;
     color:string
+    bg_app:string
 }
-export interface trans_Keypad{
-    duration: string,
-    heightKeypad:string,
-    heightSerch:string,
-    heightOverflow:string,
+export interface click_position{
+    x:number,
+    y:number,
 }
-export interface keypad_Rodape{
-    display:string,
-    position:string,
-    active:string,
+
+
+export interface style_apps{
+    appName:string,
+    bg_color:string,
+    color:string,
 }
+
 
 
 /**
  * State types
  */
 export interface styleState{
-    bg_Main: bg_Main,
-    trans_Keypad: trans_Keypad,
-    keypad_Rodape: keypad_Rodape,
-    navigation?:string
+    navigation:string,
+    click_position: click_position,
+    phone_main:phone_main,
+    open_app:boolean
+    style_apps: style_apps[]
 }

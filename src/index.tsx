@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import store from './store/Main'
 import { BrowserRouter } from "react-router-dom";
 import './GlobalStyle.css'
+import './i18n/main'
 
 
 ReactDOM.render(

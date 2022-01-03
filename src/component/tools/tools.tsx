@@ -1,234 +1,62 @@
-import { Link } from 'react-router-dom'
-import { useDispatch }from 'react-redux'
-import { useState,useEffect } from 'react';
-import { IconProps,JContentProps,AppIconProps,ViweBoxProps,CicleNumberProps,CicleProps,AnimateAppProps} from "./toolsType";
+import { useDispatch,useSelector }from 'react-redux'
+import { RootState }  from '../../store/ducks/rootReducer'  
+import { IconProps,DisplayProps,AppIconProps }   from './toolsType';
+
 import './tools.css'
 
-function Icon(props:IconProps):JSX.Element {
-  const {children, fontsize, color, to, navigation, onclick, outlined, margin, rotate, cursor,MouseCapture} = props;
-  const dispatch = useDispatch()
-  const [Verify, setVerify] = useState({to:'',navigation:''})
-
-  useEffect(() => {
-    if(to && navigation) {setVerify({to:to,navigation:navigation})}
-    else{
-      if(to){setVerify({to:to,navigation:''})}
-      if(navigation){setVerify({to:'',navigation:navigation})}
-    }
-  }, [to,navigation])
-
-  function UPDATED_NAVIGATION(nav:string) {
-    dispatch({ type:'UPDATED_NAVIGATION',navigation:nav})
-  }
- 
+function Icon(props:IconProps):JSX.Element  {
+  const BG_Main = useSelector((state: RootState) => state.reducerStyle.phone_main)
+  const{children,onClick,outlined,cursor,color,fontSize,rot} = props
   return(<>
-  {Verify.to.length >=1?
-      <Link 
-        to={Verify.to} 
-        onMouseUpCapture={MouseCapture}
-        onClick={()=>{UPDATED_NAVIGATION(Verify.navigation); if (onclick) onclick()}}
-        style={{
-          cursor: cursor ? 'pointer' : 'auto',
-          transform: rotate ? `rotate(${rotate}deg)` : 'rotate(0deg)', 
-          margin: margin ? margin : '0',
-          fontSize: fontsize ? fontsize : '12px',
-          color: color ? color : '#fff'
-        }} 
-        className={outlined?'material-icons-outlined':'material-icons'}
-      >{children}</Link>
-    :
-      <div 
-        onClick={onclick} 
-        onMouseUpCapture={MouseCapture}
-        style={{
-          cursor: cursor ? 'pointer' : 'auto',
-          transform: rotate ? `rotate(${rotate}deg)` : 'rotate(0deg)',
-          margin: margin ? margin : '0',
-          fontSize: fontsize ? fontsize : '12px', 
-          color: color ? color : '#fff'
-        }} 
-        className={outlined?'material-icons-outlined':'material-icons'}
-      >{children}</div>
-    }
-  </>)
-}
-/**
- * 
- */
-
-function JContent(props:JContentProps):JSX.Element {
-    const {children,padding,widht,height,positon,Bcolor,ac,Fdirection,transitionDuration,overflou} =props;
-  return(<>
-    <div 
-    style={{
-      transitionDuration:transitionDuration?transitionDuration:'0',
-      overflow: overflou? overflou:'hiden',
-      padding:padding?padding:'0',
-      width: widht ? widht: '100%', 
-      backgroundColor: Bcolor? Bcolor: 'transparent',
-      height:height ? height: '100%', 
-      display: 'flex',
-      alignItems:ac ? 'center' : 'stretch',
-      justifyContent: positon ? positon : 'space-between',
-      flexDirection: Fdirection ? Fdirection :'row'
-    }}
-  >{children}</div>
-  
-  </>)
-}
-
-/**
- * 
- */
-
-function AppIcon(props:AppIconProps):JSX.Element {
-  const {icon,widht,height,margin,to,navigation,onclick,cursor,MouseCapture} = props;
-  const dispatch = useDispatch()
-  const [Verify, setVerify] = useState({to:'',navigation:''})
-
-  useEffect(() => {
-    if(to && navigation) {setVerify({to:to,navigation:navigation})}
-    else{
-      if(to){setVerify({to:to,navigation:''})}
-      if(navigation){setVerify({to:'',navigation:navigation})}
-    }
-  }, [to,navigation])
-
-
-
-  function UPDATED_NAVIGATION(nav:string) {
-    dispatch({ type:'UPDATED_NAVIGATION',navigation:nav})
-  }
- 
-  return(<>
-      {Verify.to.length >=1?
-      <Link 
-        to={Verify.to} 
-        onMouseUpCapture={MouseCapture}
-        onClick={()=>{UPDATED_NAVIGATION(Verify.navigation); if (onclick) onclick()}} 
-        style={{ 
-          backgroundImage: `url(/static/icons/${icon}.png)`, 
-          margin: margin ? margin:'0',  
-          height: height ? height:'50px', 
-          width: widht ? widht:'50px',
-          cursor: cursor ? 'pointer' : 'auto' 
-        }} 
-        className='background'
-      ></Link>
-    :
-      <div 
-        onClick={onclick} 
-        style={{ 
-          backgroundImage: `url(/static/icons/${icon}.png)`,
-          margin: margin ? margin : '0',
-          height: height ? height : '50px',
-          width: widht ? widht : '50px' ,
-          cursor: cursor ? 'pointer' : 'auto' 
-        }} 
-        className='background'
-      ></div>
-    }
-  
-  </>)
-}
-/**
- * 
- */
-
- function AnimateApp(props:AnimateAppProps) {
-  const {children,width,height,display,Bcolor,padding,overflou,transitionDuration,left,top} = props
-  return(<>
-   <div 
+    <div  
+      onClick={onClick} 
       style={{
-        overflow: 'auto',
-        overflowX:'hidden',
-        overflowY:'hidden',
-        position:'static',
-
-        display:display?display:'block',
-        width:width?width:'100%',
-        height:height?height:'500px',
-        backgroundColor:Bcolor?Bcolor:'transparent',
-        left:left?left:'0',
-        top:top?top:'0'
-      }}
-      >{children}</div>
-  
-  </>)
-}
-/**
- * 
- */
-
-function ViweBox(props:ViweBoxProps) {
-  const {children,width,height,display,Bcolor,padding,overflou,transitionDuration} = props
-  return(<>
-   <div 
-      style={{
-        transitionDuration:transitionDuration?transitionDuration:'0',
-        overflow: overflou? overflou:'hiden',
-        padding: padding ? padding :'',
-        display:display?display:'block',
-        width:width?width:'100%',
-        height:height?height:'500px',
-        backgroundColor:Bcolor?Bcolor:'transparent' 
-      }}
-      >{children}</div>
-  
-  </>)
-}
-/**
- * 
- */
-
-
-function CicleNumber(props:CicleNumberProps):JSX.Element {
-  const {children,d,Bcolor,fontSize,span,onclick} = props;
-  return(<>
-     <div 
-      className='Hover-CicleNumber'
-      style={{
-        cursor:'pointer',
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center',
-        borderRadius:'50%',
-        width:d?d:'30px',
-        height:d?d:'30px',
-        backgroundColor:Bcolor?Bcolor:'transparent',
-        flexDirection:'column',
-        fontSize:fontSize?fontSize:'28px',
-        fontWeight: '500',
-      }}
-      onClick={onclick}
-    > 
-      <p style={{marginTop:'0'}}>{children}</p>  
-      <span style={{height:'18px',fontSize:'10px',marginTop:'-6px',color:'#858585'}}>{span}</span> 
-    </div>
-  </>)
-}
-/**
- * 
- */
-
-
-
-function Cicle(props:CicleProps):JSX.Element {
-  const {children,d,Bcolor,cursor} = props
-  return(<>
-    <div
-      style={{
-        cursor: cursor? 'pointer' :'auto' ,
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center',
-        borderRadius:'50%',
-        width:d?d:'30px',
-        height:d?d:'30px',
-        backgroundColor:Bcolor?Bcolor:'transparent',
-      }}
+        cursor:cursor?'pointer': 'auto' ,
+        fontSize:fontSize?fontSize:'14px',
+        color:color?color:BG_Main.color,
+        transform: rot?`rotate(${rot}deg)`:'0'
+      }} 
+      className={outlined? 'material-icons-outlined':'material-icons'} 
     >{children}</div>
+    </>)
+}
+
+function Display(props:DisplayProps) {
+  const {children,onClick,flexDirection,height,width,alignItem,justifyContent,margin,padding,className,Bcolor}=props
+  return(<>
+  <div 
+    style={{
+      display:'flex',
+      height:height?height:'100%',
+      width:width?width:'100%',
+      flexDirection:flexDirection?flexDirection:'row',
+      alignItems:alignItem?alignItem:'stretch',
+      justifyContent:justifyContent?justifyContent:'center',
+      margin:margin?margin:'0',
+      padding:padding?padding:'0',
+      backgroundColor:Bcolor?Bcolor:'transparent'
+    }} 
+    className={className}
+    onClick={onClick}  
+  >{children}</div>
+  </>)
+}
+function AppIcon(props:AppIconProps) {
+  const {onClick,iconName}=props
+  const dispatch = useDispatch() 
+  function click_position(x:number,y:number) {  
+      dispatch({ type:'UPDATED_CLICK_POSITION',x: x -(window.innerWidth - 340)  ,y:y - (window.innerHeight - 720)})  
+  }
+  return(<>
+    <div onMouseDownCapture={(e)=>{click_position(e.nativeEvent.clientX,e.nativeEvent.clientY);}}  onClick={onClick} className='AppIcon background' style={{ backgroundImage: `url(./static/icons/${iconName}.png)`}}/>
   </>)
 }
 
-export {Icon,JContent,AppIcon,ViweBox,CicleNumber,Cicle,AnimateApp}
+
+
+
+export  {
+  Icon,
+  Display,
+  AppIcon
+}

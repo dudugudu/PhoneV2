@@ -1,38 +1,72 @@
 import './phone.css'
 import { useSelector } from 'react-redux'
 import { RootState }  from '../store/ducks/rootReducer'  
-import { Icon,JContent } from '../component/tools/tools'
 import Routers from './main/routes'
+import { useEffect } from 'react'
+import { useDispatch }from 'react-redux'
+
+
 
 function RootPhone() {
-  const BG = useSelector((state: RootState) => state.reducerStyle.bg_Main)
+  const dispatch = useDispatch()
+  const BG_Main = useSelector((state: RootState) => state.reducerStyle.phone_main)
+  const APP = useSelector((state: RootState) => state.reducerStyle.open_app)
+  const PS = useSelector((state: RootState) => state.reducerStyle.click_position)
+   
   
   return(<>
-    <div className='S20 background' style={{ color: BG.color}}>
-      <div className='S20-Fundo background' style={{backgroundColor:BG.backgroundColor, backgroundImage: BG.backgroundImage}}></div>
-      <div className='S20-matte' style={{display:BG.Matte}}></div>
-      <div className='S20-notify' ></div>
-      <div className='S20-topbar'>
-        <div className='topbar-content'>
-          <div >Underground</div>
-          <div style={{ display:'flex' }}>
-            <Icon margin='-2px -4px 0 0 '  fontsize='14px' color={BG.color} >4g_mobiledata</Icon>
-            <Icon margin='0 5px 0 0 '  fontsize='14px' color={BG.color} >signal_cellular_4_bar</Icon>
-            <Icon margin='0 2px 0 0 '  fontsize='14px' color={BG.color} >battery_full</Icon>
-          </div>
-        </div>
+    <div className='S20 background' 
+      style={{ 
+        color: BG_Main.color
+      }}>
+      <div className='Background-Main background' style={{ backgroundImage:'url(/static/media/walpaper.jpg)' }}></div>
+      <div className='Background-App'
+        style={{ 
+          backgroundColor:BG_Main.bg_app,
+          width:APP?'':'0',
+          height:APP?'':'0',
+          animation:APP?'open .4s  1':'close 0.3s  1',
+          transitionDuration:'.3s',
+          color: BG_Main.color
+      }}
+      ></div>
+      <style>{`
+        @keyframes open {
+          0% { 
+            left:${PS.x}px;
+            top:${PS.y}px;
+            width:10px;
+            height:10px;
+          }
+          100% { 
+            left:0px;
+            top:0px;
+            width:305.5px;
+            height:669px;
+          }
+        }
+        @keyframes close {
+          0% { 
+            left:0px;
+            top:0px;
+            width:305.5px;
+            height:669px;
+          }
+          70%{
+            opacity: 1
+          }
+          100% { 
+            left:${PS.x}px;
+            top:${PS.y}px;
+            opacity: 0.2
+          }
+        }
+      `}</style>
+      <div className='Background-All-App' ></div>
+      <div className='Background-Viwer-Access'>
+        <Routers/>
       </div>
-      <div className='S20-viwer'>
-          <Routers/>
-      </div>
-      <div className='S20-rodape'> 
-        <JContent positon='space-evenly' ac> 
-          <Icon to='' fontsize='24px' color={BG.color} cursor>chevron_left</Icon>
-          <Icon fontsize='19px' color={BG.color} cursor>check_box_outline_blank</Icon>
-          <Icon fontsize='19px' color={BG.color} rotate='90' cursor>menu</Icon>
-        </JContent>   
-      </div>
-  </div>
+    </div>
   </>)
 }
 
