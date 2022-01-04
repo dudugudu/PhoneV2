@@ -13,8 +13,12 @@ const INITIAL_STATE: styleState ={
     },
     open_app: false,
     style_apps:[
-      {appName:'keypad', bg_color:'#ffffff',color:'black'},
-      {appName:'call', bg_color:'yellow',color:'black'}
+      { appName:'keypad',
+        style:[
+          {typestyle:'light',bg_color:'#ffffff',color:'black'}
+        ]
+      },
+    
     ]
    
 }
