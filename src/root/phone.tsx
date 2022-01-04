@@ -25,7 +25,7 @@ function RootPhone() {
           backgroundColor:BG_Main.bg_app,
           width:APP?'':'0',
           height:APP?'':'0',
-          animation:APP?'open .4s  1':'close 0.3s  1',
+          animation:APP?'open .4s  1':'close 400ms  1',
           transitionDuration:'.3s',
           color: BG_Main.color
       }}
@@ -54,6 +54,11 @@ function RootPhone() {
           }
           70%{
             opacity: 1
+            
+          }
+          85%{
+            width:10px;
+            height:10px;
           }
           100% { 
             left:${PS.x}px;
