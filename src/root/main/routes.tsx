@@ -31,9 +31,15 @@ function Routers() {
   function OpenApp(name:string) {
     APPSTYLE.map((obj)=>{
       if (obj.appName === name) {
-        dispatch({ type:'UPDATED_PHONE_MAIN',  what_app:name, color:obj.color, bg_app:obj.bg_color})
-        dispatch({ type:'OPEN_APP',state:true})
+        obj.style.map((theme)=>{
+          if (theme.typestyle === 'light') {
+            dispatch({ type:'UPDATED_PHONE_MAIN',  what_app:name, color:theme.color, bg_app:theme.bg_color})
+            dispatch({ type:'OPEN_APP',state:true})
+          }
+          return null
+        })
       }
+      return null
     })
   }
 
