@@ -13,6 +13,7 @@ export interface IconProps{
   fontSize?: string ;
   color?: string ;
   rot?:string;
+  margin?:string;
   cursor?: boolean;
   outlined?: boolean;
 }
@@ -34,4 +35,12 @@ export interface AppIconProps{
   children?:JSX.Element| JSX.Element[]| string;
   onClick?:any;
   iconName?:string;
+}
+
+export interface AnimetedAppType{
+  children?:JSX.Element| JSX.Element[]| string;
+}
+export interface BottomNavigationProps{
+  children?:JSX.Element| JSX.Element[]| string;
+  width?: string;
 }
