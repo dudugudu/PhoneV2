@@ -11,11 +11,16 @@ export interface click_position{
     y:number,
 }
 
+interface style{
+    typestyle: string,
+    bg_color:string,
+    color:string,
+}
+
 
 export interface style_apps{
     appName:string,
-    bg_color:string,
-    color:string,
+    style: style[]
 }
 
 
