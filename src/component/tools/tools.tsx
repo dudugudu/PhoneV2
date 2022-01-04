@@ -1,12 +1,21 @@
 import { useDispatch,useSelector }from 'react-redux'
 import { RootState }  from '../../store/ducks/rootReducer'  
-import { IconProps,DisplayProps,AppIconProps }   from './toolsType';
+import { 
+
+  IconProps,
+  DisplayProps,
+  AppIconProps,
+  AnimetedAppType,
+  BottomNavigationProps, 
+
+} from './toolsType';
 
 import './tools.css'
 
+
 function Icon(props:IconProps):JSX.Element  {
   const BG_Main = useSelector((state: RootState) => state.reducerStyle.phone_main)
-  const{children,onClick,outlined,cursor,color,fontSize,rot} = props
+  const{children,onClick,outlined,cursor,color,fontSize,rot,margin} = props
   return(<>
     <div  
       onClick={onClick} 
@@ -14,7 +23,8 @@ function Icon(props:IconProps):JSX.Element  {
         cursor:cursor?'pointer': 'auto' ,
         fontSize:fontSize?fontSize:'14px',
         color:color?color:BG_Main.color,
-        transform: rot?`rotate(${rot}deg)`:'0'
+        transform: rot?`rotate(${rot}deg)`:'0',
+        margin:margin?margin:'0'
       }} 
       className={outlined? 'material-icons-outlined':'material-icons'} 
     >{children}</div>
@@ -52,11 +62,68 @@ function AppIcon(props:AppIconProps) {
   </>)
 }
 
+function AnimetedApp(props:AnimetedAppType) {
+  const { children } = props
+  const PS = useSelector((state: RootState) => state.reducerStyle.click_position)
+  console.log(PS);
+  
+  return(<>
+      <style>{`
+        @keyframes openApp {
+          0% { 
+            width: 120px;
+            height: 120px;
+            margin-left:${PS.x}px;
+            margin-top:${PS.y}px;
+            opacity: 0;
+            
+          }
+          100% { 
+            opacity: 1;
+            margin-left:0px;
+            margin-top:0px;
+          }
+        }
+      `}</style>
+      <div style={{
+        
+        position:'relative',
+        display:'flex',
+        width: '305.5px',
+        height: '600px',
+        animation:'openApp .6s  1',
+        transitionDuration:'.6s',
+        overflow:'auto',
+        overflowX:'hidden',
+        overflowY:'hidden',
+        marginLeft:'-1px',
+        padding:'0 8px'
+      }}>
+       {children}
+      </div>
+  </>)
+}
 
 
+function BottomNavigation(props:BottomNavigationProps) {
+  const { children,width } = props
+  return(<>
+  <div 
+    style={{
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center',
+      width:width?width:'auto'
+    }}>
+      <div className='Botton-Navigation' >{children}</div>
+  </div>
+  </>)
+}
 
 export  {
   Icon,
   Display,
-  AppIcon
+  AppIcon,
+  AnimetedApp,
+  BottomNavigation
 }
