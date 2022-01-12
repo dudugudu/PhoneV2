@@ -1,7 +1,7 @@
 import { useDispatch,useSelector }from 'react-redux'
-import { RootState }  from '../../store/ducks/rootReducer'  
+// @ts-ignore
+import { RootState }  from 'store/ducks/rootReducer'  
 import { 
-
   IconProps,
   DisplayProps,
   AppIconProps,
@@ -20,6 +20,7 @@ function Icon(props:IconProps):JSX.Element  {
     <div  
       onClick={onClick} 
       style={{
+        display:'flex',
         cursor:cursor?'pointer': 'auto' ,
         fontSize:fontSize?fontSize:'14px',
         color:color?color:BG_Main.color,
@@ -71,8 +72,8 @@ function AnimetedApp(props:AnimetedAppType) {
       <style>{`
         @keyframes openApp {
           0% { 
-            width: 120px;
-            height: 120px;
+            width: 91px;
+            height: 201px;
             margin-left:${PS.x}px;
             margin-top:${PS.y}px;
             opacity: 0;
@@ -106,16 +107,22 @@ function AnimetedApp(props:AnimetedAppType) {
 
 
 function BottomNavigation(props:BottomNavigationProps) {
-  const { children,width } = props
+  const { children,width,active,onClick } = props
   return(<>
   <div 
+    onClick={onClick}
     style={{
       display:'flex',
       justifyContent:'center',
       alignItems:'center',
-      width:width?width:'auto'
+      width:width?width:'auto',
     }}>
-      <div className='Botton-Navigation' >{children}</div>
+      <div className='Botton-Navigation' 
+        style={{
+          color:active === 'true'? '#109e5d':'#363636',
+          borderColor:active === 'true'? '#109e5d':'#363636',
+        }}
+      >{children}</div>
   </div>
   </>)
 }

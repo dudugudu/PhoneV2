@@ -15,7 +15,7 @@ const INITIAL_STATE: styleState ={
     style_apps:[
       { appName:'keypad',
         style:[
-          {typestyle:'light',bg_color:'#ffffff',color:'black'}
+          {typestyle:'light',bg_color:'#ffffff',color:'#363636'}
         ]
       },
     

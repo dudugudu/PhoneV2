@@ -43,4 +43,6 @@ export interface AnimetedAppType{
 export interface BottomNavigationProps{
   children?:JSX.Element| JSX.Element[]| string;
   width?: string;
+  onClick?: any;
+  active?:any;
 }

@@ -15,8 +15,12 @@
   
 }
 .keypad-contatos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 130px;
+  overflow: auto;
 }
 .keypad-numero-discado{
   display: flex;
@@ -52,7 +56,7 @@
   border-radius: 50%;
 }
 .NumberPress:hover{
-  background-color: gray !important;
+  background-color: #36363646 !important;
 }
 .NumberPress p{
   font-size: 20px;
@@ -91,4 +95,47 @@
   width: 100%;
   height: 44px;
   
+}
+
+.Card-Contatos{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 260px;
+  height: 32px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.Card-Contatos .Perfil{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.Card-Contatos .Name{
+  margin-left: 5px;
+  width: 145px;
+  font-size: 14px;
+}
+.Card-Contatos .Phone{
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+  width: 70px;
+  font-size: 10px;
+}
+
+
+.keypad-contatos::-webkit-scrollbar {
+  width: 0px;
+}
+
+.keypad-contatos::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: transparent;
 }

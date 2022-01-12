@@ -1,3 +1,10 @@
+:root{
+  --btnGren:'#15b76d';
+  --btnRed:'#f01446'; 
+  --btnPrimary:'#0072de';
+  --btnPrimaryActive:'#3e91ff';
+  --black:'#363636'
+}
 .S20 {
   position: absolute;
   display: flex;
@@ -6,6 +13,9 @@
   margin-top: calc( 100vh - 720px);
   margin-left: calc( 100vw - 340px);
   background-image: url('../static/media/molde/s20.png');
+  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
   
 }
 
@@ -41,7 +51,8 @@
 .Background-Viwer-Access{
   position: absolute;
   display: flex;
-  flex-direction: column;
+  
+  justify-content: center;
   margin-top: 5.5px;
   margin-left: 4.5px;
   width: 305.5px;
@@ -51,10 +62,18 @@
   
   
 }
+.Viwer-Access-Interno{
+  margin-top: 8px;
+  width: 290px;
+  height: 648px;
+  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
 .Top-Bar-Main{
   display: flex;
   width: 100%;
-  height: 30px;
+  height: 22px;
   border-radius: 35px 35px 0 0;
 }
 

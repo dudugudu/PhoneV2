@@ -6,7 +6,6 @@ import { useEffect } from 'react'
 import { useDispatch }from 'react-redux'
 
 
-
 function RootPhone() {
   const dispatch = useDispatch()
   const BG_Main = useSelector((state: RootState) => state.reducerStyle.phone_main)
@@ -25,7 +24,7 @@ function RootPhone() {
           backgroundColor:BG_Main.bg_app,
           width:APP?'':'0',
           height:APP?'':'0',
-          animation:APP?'open .4s  1':'close 400ms  1',
+          animation:APP?'open .4s  1':'close 300ms  1',
           transitionDuration:'.3s',
           color: BG_Main.color
       }}
@@ -36,7 +35,7 @@ function RootPhone() {
             left:${PS.x}px;
             top:${PS.y}px;
             width:10px;
-            height:10px;
+            height:22px;
           }
           100% { 
             left:0px;
@@ -57,19 +56,22 @@ function RootPhone() {
             
           }
           85%{
-            width:10px;
-            height:10px;
-          }
-          100% { 
+            width:22px;
+            height:22px;
             left:${PS.x}px;
             top:${PS.y}px;
+          }
+          100% { 
+           
             opacity: 0.2
           }
         }
       `}</style>
       <div className='Background-All-App' ></div>
       <div className='Background-Viwer-Access'>
-        <Routers/>
+        <div className='Viwer-Access-Interno'>
+          <Routers/>
+        </div>
       </div>
     </div>
   </>)
