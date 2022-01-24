@@ -43,15 +43,15 @@ function RootPhone() {
           ></div>
           <div
             style={{
-              backgroundColor: BG_Main.topBar.BG_color,
-              color: BG_Main.topBar.color,
+              backgroundColor: BG_Main.viwer.BG_color,
+              color: BG_Main.viwer.color,
             }}
             className="Viwer"
           ></div>
           <div
             style={{
-              backgroundColor: BG_Main.topBar.BG_color,
-              color: BG_Main.topBar.color,
+              backgroundColor: BG_Main.baseboard.BG_color,
+              color: BG_Main.baseboard.color,
             }}
             className="Baseboard"
           ></div>
