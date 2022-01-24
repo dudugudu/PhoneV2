@@ -1,48 +1,37 @@
-interface Main{
-  children?:JSX.Element| JSX.Element[]| string;
+interface Main {
+  children?: JSX.Element | JSX.Element[] | string;
   onClick?: any;
   className?: string | any;
-  onChange?: any; 
-  onKeyUp?: any;  
-  onKeyDown?: any; 
+  onChange?: any;
+  onKeyUp?: any;
+  onKeyDown?: any;
 }
 
-export interface IconProps{
-  children?:JSX.Element| JSX.Element[]| string;
-  onClick?: any;
-  fontSize?: string ;
-  color?: string ;
-  rot?:string;
-  margin?:string;
+export interface IconProps extends Main {
+  fontSize?: string;
+  color?: string;
+  rot?: string;
+  margin?: string;
   cursor?: boolean;
   outlined?: boolean;
 }
-export interface DisplayProps{
-  children?:JSX.Element| JSX.Element[]| string;
-  onClick?:any;
-  className?:string;
-  width?:string; 
-  height?:string; 
-  justifyContent?:string;
-  alignItem?:string;
-  flexDirection?:string|any;
-  margin?:string;
-  padding?:string;
-  Bcolor?:string; 
-}
-
-export interface AppIconProps{
-  children?:JSX.Element| JSX.Element[]| string;
-  onClick?:any;
-  iconName?:string;
-}
-
-export interface AnimetedAppType{
-  children?:JSX.Element| JSX.Element[]| string;
-}
-export interface BottomNavigationProps{
-  children?:JSX.Element| JSX.Element[]| string;
+export interface DisplayProps extends Main {
   width?: string;
-  onClick?: any;
-  active?:any;
+  height?: string;
+  justifyContent?: string;
+  alignItem?: string;
+  flexDirection?: string | any;
+  margin?: string;
+  padding?: string;
+  Bcolor?: string;
+}
+
+export interface AppIconProps extends Main {
+  iconName?: string;
+}
+
+export interface AnimetedAppType extends Main {}
+export interface BottomNavigationProps extends Main {
+  width?: string;
+  active?: any;
 }
