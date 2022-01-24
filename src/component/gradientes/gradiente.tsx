@@ -1,14 +1,3 @@
+function Gradiente(params: string) {}
 
-
-
-
-
-
-
-function Gradiente(params:type) {
-  
-}
-
-
-
-export{ Gradiente}
+export { Gradiente };
