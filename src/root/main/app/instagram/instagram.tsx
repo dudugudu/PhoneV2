@@ -1,2 +1,4 @@
-function Model(params: string) {}
-export default Model;
+function Instagram(params: string) {
+  return <>hello Instagram</>;
+}
+export default Instagram;

@@ -1,2 +1,4 @@
-function Model(params: string) {}
-export default Model;
+function Ifood(params: string) {
+  return <>hello ifood</>;
+}
+export default Ifood;

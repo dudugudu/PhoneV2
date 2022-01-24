@@ -1,2 +1,4 @@
-function Model(params: string) {}
-export default Model;
+function Chamados(params: string) {
+  return <>hello chamados</>;
+}
+export default Chamados;

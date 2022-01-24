@@ -1,2 +1,4 @@
-function Model(params: string) {}
-export default Model;
+function WhattsApp(params: string) {
+  return <>hello whattsapp</>;
+}
+export default WhattsApp;

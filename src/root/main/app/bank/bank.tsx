@@ -1,2 +1,6 @@
-function Model(params: string) {}
-export default Model;
+import "./bank.css";
+
+function Bank(params: string) {
+  return <>hellow bank</>;
+}
+export default Bank;

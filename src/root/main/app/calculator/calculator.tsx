@@ -1,2 +1,6 @@
-function Model(params: string) {}
-export default Model;
+import "./calculator.css";
+
+function Calculator(params: string) {
+  return <>hello chamados</>;
+}
+export default Calculator;
