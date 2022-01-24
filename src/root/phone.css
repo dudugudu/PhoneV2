@@ -1,25 +1,24 @@
-:root{
-  --btnGren:'#15b76d';
-  --btnRed:'#f01446'; 
-  --btnPrimary:'#0072de';
-  --btnPrimaryActive:'#3e91ff';
-  --black:'#363636'
+:root {
+  --btnGren: "#15b76d";
+  --btnRed: "#f01446";
+  --btnPrimary: "#0072de";
+  --btnPrimaryActive: "#3e91ff";
+  --black: "#363636";
 }
 .S20 {
   position: absolute;
   display: flex;
   width: 315px;
   height: 679px;
-  margin-top: calc( 100vh - 720px);
-  margin-left: calc( 100vw - 340px);
-  background-image: url('../static/media/molde/s20.png');
+  margin-top: calc(100vh - 720px);
+  margin-left: calc(100vw - 340px);
+  background-image: url("../static/media/molde/s20.png");
   overflow: auto;
   overflow-y: hidden;
   overflow-x: hidden;
-  
 }
 
-.Background-Main{
+.Background-Main {
   position: absolute;
   margin-top: 5.5px;
   margin-left: 4.5px;
@@ -28,7 +27,7 @@
   z-index: -10;
   border-radius: 40px;
 }
-.Background-App{
+.Background-App {
   position: absolute;
   margin-top: 5.5px;
   margin-left: 4.5px;
@@ -36,9 +35,22 @@
   height: 669px;
   z-index: -2;
   border-radius: 40px;
-  
 }
-.Background-All-App{
+.Background-App .Topbar {
+  border-radius: 40px 40px 0 0;
+  width: 100%;
+  height: 30px;
+}
+.Background-App .Viwer {
+  width: 100%;
+  height: 598px;
+}
+.Background-App .Baseboard {
+  border-radius: 0 0 40px 40px;
+  width: 100%;
+  height: 39px;
+}
+.Background-All-App {
   position: absolute;
   margin-top: 5.5px;
   margin-left: 4.5px;
@@ -48,10 +60,10 @@
   border-radius: 40px;
 }
 
-.Background-Viwer-Access{
+.Background-Viwer-Access {
   position: absolute;
   display: flex;
-  
+
   justify-content: center;
   margin-top: 5.5px;
   margin-left: 4.5px;
@@ -59,10 +71,8 @@
   height: 669px;
   z-index: 1;
   border-radius: 40px;
-  
-  
 }
-.Viwer-Access-Interno{
+.Viwer-Access-Interno {
   margin-top: 8px;
   width: 290px;
   height: 648px;
@@ -70,30 +80,28 @@
   overflow-y: hidden;
   overflow-x: hidden;
 }
-.Top-Bar-Main{
+.Top-Bar-Main {
   display: flex;
   width: 100%;
   height: 22px;
   border-radius: 35px 35px 0 0;
 }
 
-.Viwer-Access-Full{
+.Viwer-Access-Full {
   display: flex;
   width: 100%;
   height: 597px;
 }
 
-
-.Rodape-Maind{
+.Rodape-Maind {
   width: 100%;
   height: 30px;
   border-radius: 0 0 35px 35px;
 }
-.example{
+.example {
   justify-content: baseline;
   align-items: baseline;
   flex-direction: column;
   margin: auto;
   padding: auto;
-
 }

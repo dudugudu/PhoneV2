@@ -1,35 +1,62 @@
-import './phone.css'
-import { useSelector } from 'react-redux'
-import { RootState }  from '../store/ducks/rootReducer'  
-import Routers from './main/routes'
-import { useEffect } from 'react'
-import { useDispatch }from 'react-redux'
-
+import "./phone.css";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/ducks/rootReducer";
+import Routers from "./main/routes";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 function RootPhone() {
-  const dispatch = useDispatch()
-  const BG_Main = useSelector((state: RootState) => state.reducerStyle.phone_main)
-  const APP = useSelector((state: RootState) => state.reducerStyle.open_app)
-  const PS = useSelector((state: RootState) => state.reducerStyle.click_position)
-   
-  
-  return(<>
-    <div className='S20 background' 
-      style={{ 
-        color: BG_Main.color
-      }}>
-      <div className='Background-Main background' style={{ backgroundImage:'url(/static/media/walpaper.jpg)' }}></div>
-      <div className='Background-App'
-        style={{ 
-          backgroundColor:BG_Main.bg_app,
-          width:APP?'':'0',
-          height:APP?'':'0',
-          animation:APP?'open .4s  1':'close 300ms  1',
-          transitionDuration:'.3s',
-          color: BG_Main.color
-      }}
-      ></div>
-      <style>{`
+  const dispatch = useDispatch();
+  const BG_Main = useSelector(
+    (state: RootState) => state.reducerStyle.phone_main
+  );
+  const APP = useSelector((state: RootState) => state.reducerStyle.open_app);
+  const PS = useSelector(
+    (state: RootState) => state.reducerStyle.click_position
+  );
+
+  //setTimeout(() => {
+  //  if (APP) return;
+  //}, 405);
+  return (
+    <>
+      <div className="S20 background">
+        <div
+          className="Background-Main background"
+          style={{ backgroundImage: "url(/static/media/walpaper.jpg)" }}
+        ></div>
+        <div
+          className="Background-App"
+          style={{
+            width: APP ? "" : "0",
+            height: APP ? "" : "0",
+            animation: APP ? "open .4s  1" : "close 300ms  1",
+            transitionDuration: ".3s",
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: BG_Main.topBar.BG_color,
+              color: BG_Main.topBar.color,
+            }}
+            className="Topbar"
+          ></div>
+          <div
+            style={{
+              backgroundColor: BG_Main.topBar.BG_color,
+              color: BG_Main.topBar.color,
+            }}
+            className="Viwer"
+          ></div>
+          <div
+            style={{
+              backgroundColor: BG_Main.topBar.BG_color,
+              color: BG_Main.topBar.color,
+            }}
+            className="Baseboard"
+          ></div>
+        </div>
+        <style>{`
         @keyframes open {
           0% { 
             left:${PS.x}px;
@@ -67,25 +94,20 @@ function RootPhone() {
           }
         }
       `}</style>
-      <div className='Background-All-App' ></div>
-      <div className='Background-Viwer-Access'>
-        <div className='Viwer-Access-Interno'>
-          <Routers/>
+        <div className="Background-All-App"></div>
+        <div className="Background-Viwer-Access">
+          <div className="Viwer-Access-Interno">
+            <Routers />
+          </div>
         </div>
       </div>
-    </div>
-  </>)
+    </>
+  );
 }
 
-export{
-  RootPhone
-}
-
-
-
-
+export { RootPhone };
 
 //import { useSelector } from 'react-redux'
-//import { RootState }  from './store/ducks/rootReducer'  
+//import { RootState }  from './store/ducks/rootReducer'
 //const Background = useSelector((state: RootState) => state.reducerStyle.bg_Main)
 //console.log(Background);
