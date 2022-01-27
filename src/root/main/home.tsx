@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Display, AppIcon } from "../../component/tools/tools";
-
+import * as Comp from "component/tools/tools";
 import { RootState } from "../../store/ducks/rootReducer";
 
 function Home() {
@@ -46,80 +45,88 @@ function Home() {
           height: "100%",
         }}
       >
-        <Display
+        <Comp.Display
           justifyContent="space-evenly"
           alignItem="center"
           height="80px"
-        ></Display>
-        <Display
+        ></Comp.Display>
+        <Comp.Display
           justifyContent="space-evenly"
           alignItem="center"
           height="80px"
-        ></Display>
-        <Display
+        ></Comp.Display>
+        <Comp.Display
           justifyContent="space-evenly"
           alignItem="center"
           height="80px"
-        ></Display>
-        <Display
+        ></Comp.Display>
+        <Comp.Display
           justifyContent="space-evenly"
           alignItem="center"
           height="80px"
-        ></Display>
-        <Display
+        ></Comp.Display>
+        <Comp.Display
           justifyContent="space-evenly"
           alignItem="center"
           height="80px"
-        ></Display>
-        <Display
+        ></Comp.Display>
+        <Comp.Display
           justifyContent="space-evenly"
           alignItem="center"
           height="80px"
-        ></Display>
-        <Display justifyContent="space-evenly" alignItem="center" height="35px">
-          <AppIcon
+        ></Comp.Display>
+        <Comp.Display
+          justifyContent="space-evenly"
+          alignItem="center"
+          height="35px"
+        >
+          <Comp.AppIcon
             onClick={() => {
               OpenApp("facebook");
             }}
             iconName="facebook"
           />
-          <AppIcon
+          <Comp.AppIcon
             onClick={() => {
               OpenApp("whattsapp");
             }}
             iconName="whattsapp"
           />
-          <AppIcon
+          <Comp.AppIcon
             onClick={() => {
               OpenApp("instagram");
             }}
             iconName="instagram"
           />
-          <AppIcon
+          <Comp.AppIcon
             onClick={() => {
               OpenApp("settings");
             }}
             iconName="settings"
           />
-        </Display>
-        <Display justifyContent="space-evenly" alignItem="center" height="80px">
-          <AppIcon
+        </Comp.Display>
+        <Comp.Display
+          justifyContent="space-evenly"
+          alignItem="center"
+          height="80px"
+        >
+          <Comp.AppIcon
             onClick={() => {
               OpenApp("keypad");
             }}
             iconName="phone"
           />
-          <AppIcon
+          <Comp.AppIcon
             onClick={() => {
               OpenApp("call");
             }}
             iconName="calendar"
           />
-          <AppIcon iconName="camera" />
-          <AppIcon iconName="apps" />
-        </Display>
+          <Comp.AppIcon iconName="camera" />
+          <Comp.AppIcon iconName="apps" />
+        </Comp.Display>
       </div>
     </>
   );
 }
-export { Home };
+export default Home;

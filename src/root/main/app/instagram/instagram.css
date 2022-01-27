@@ -1,0 +1,140 @@
+.external-instagram {
+  width: 100%;
+  height: 100%;
+}
+.external-instagram .topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 35px;
+}
+.external-instagram .status {
+  width: 100%;
+  height: 75px;
+}
+.external-instagram .viwe-post {
+  width: 100%;
+  height: 400px;
+}
+.external-instagram .base-board {
+  width: 100%;
+  height: 35px;
+}
+.icons-right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 3px;
+}
+.topbar .icons {
+  width: 18px;
+}
+
+/**/
+.status {
+  padding: 4px 0;
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 3px;
+}
+.box-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 64px;
+  height: 100%;
+  font-size: 10px;
+}
+.box-external-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+}
+
+.status-profile {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-size: 100%;
+  background-position: center;
+}
+.status-activated:after {
+  position: absolute;
+  margin-top: -5px;
+  margin-left: -5px;
+  height: 54px;
+  border-radius: 50%;
+  width: 54px;
+  z-index: -2;
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+
+  content: "";
+}
+
+.status-activated:before {
+  position: absolute;
+  margin-top: -3px;
+  margin-left: -3px;
+  height: 50px;
+  border-radius: 50%;
+  width: 50px;
+  z-index: -1;
+  background: #fff;
+
+  content: "";
+}
+/**/
+.add-status {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-left: 35px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #0091f1;
+  border: 2px solid #fff;
+}
+/***/
+.topbar-post {
+  display: flex;
+  align-items: center;
+}
+
+.image-profile-post .logo {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-size: 100%;
+  background-position: center;
+}
+.viwer-post img {
+  width: 100%;
+}
+.baseboard-post {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+}
+.name-post h5 {
+  margin-left: 5px;
+  font-size: 12px;
+}
+.topbar-post {
+  height: 35px;
+}

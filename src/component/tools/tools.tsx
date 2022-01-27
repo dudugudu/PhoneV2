@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 // @ts-ignore
 import { RootState } from "store/ducks/rootReducer";
+
 import {
   IconProps,
   DisplayProps,
@@ -10,6 +11,7 @@ import {
 } from "./toolsType";
 
 import "./tools.css";
+import { useEffect, useState } from "react";
 
 function Icon(props: IconProps): JSX.Element {
   const BG_Main = useSelector(
@@ -106,47 +108,33 @@ function AppIcon(props: AppIconProps) {
 
 function AnimetedApp(props: AnimetedAppType) {
   const { children } = props;
-  const PS = useSelector(
-    (state: RootState) => state.reducerStyle.click_position
-  );
-  console.log(PS);
+  const [Display, setDisplay] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDisplay(true);
+    }, 360);
+  }, [children]);
 
   return (
     <>
-      <style>{`
-        @keyframes openApp {
-          0% { 
-            width: 91px;
-            height: 201px;
-            margin-left:${PS.x}px;
-            margin-top:${PS.y}px;
-            opacity: 0;
-            
-          }
-          100% { 
-            opacity: 1;
-            margin-left:0px;
-            margin-top:0px;
-          }
-        }
-      `}</style>
-      <div
-        style={{
-          position: "relative",
-          display: "flex",
-          width: "305.5px",
-          height: "600px",
-          animation: "openApp .6s  1",
-          transitionDuration: ".6s",
-          overflow: "auto",
-          overflowX: "hidden",
-          overflowY: "hidden",
-          marginLeft: "-1px",
-          padding: "0 8px",
-        }}
-      >
-        {children}
-      </div>
+      {Display && (
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            width: "305.5px",
+            height: "600px",
+            overflow: "auto",
+            overflowX: "hidden",
+            overflowY: "hidden",
+            marginLeft: "-1px",
+            padding: "0 8px",
+          }}
+        >
+          {children}
+        </div>
+      )}
     </>
   );
 }

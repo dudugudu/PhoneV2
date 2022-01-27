@@ -2,22 +2,31 @@ import "./phone.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/ducks/rootReducer";
 import Routers from "./main/routes";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+
+import BgApp from "./backgroundApps/BgApp";
 
 function RootPhone() {
-  const dispatch = useDispatch();
   const BG_Main = useSelector(
     (state: RootState) => state.reducerStyle.phone_main
   );
+  const MAIN = useSelector((state: RootState) => state.reducerStyle.phone_main);
   const APP = useSelector((state: RootState) => state.reducerStyle.open_app);
   const PS = useSelector(
     (state: RootState) => state.reducerStyle.click_position
   );
+  function WhatPage(name: string) {
+    switch (name) {
+      case "whattsapp":
+        console.log("Chamando");
 
-  //setTimeout(() => {
-  //  if (APP) return;
-  //}, 405);
+        return <BgApp.WhattsAppBG />;
+      default:
+        return <></>;
+    }
+    // eslint-disable-next-line no-unreachable
+    return <></>;
+  }
+
   return (
     <>
       <div className="S20 background">
@@ -47,7 +56,13 @@ function RootPhone() {
               color: BG_Main.viwer.color,
             }}
             className="Viwer"
-          ></div>
+          >
+            {APP && MAIN.what_app !== "" ? (
+              WhatPage(MAIN.what_app)
+            ) : (
+              <>deu ruim</>
+            )}
+          </div>
           <div
             style={{
               backgroundColor: BG_Main.baseboard.BG_color,
@@ -96,7 +111,12 @@ function RootPhone() {
       `}</style>
         <div className="Background-All-App"></div>
         <div className="Background-Viwer-Access">
-          <div className="Viwer-Access-Interno">
+          <div
+            className="Viwer-Access-Interno"
+            style={{
+              color: BG_Main.viwer.color,
+            }}
+          >
             <Routers />
           </div>
         </div>

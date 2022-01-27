@@ -1,16 +1,16 @@
-@import url('http://fonts.cdnfonts.com/css/samsung-sharp-sans');
+@import url("http://fonts.cdnfonts.com/css/samsung-sharp-sans");
 body {
-  font-family: 'Samsung Sharp Sans', sans-serif;
+  font-family: "Samsung Sharp Sans", sans-serif;
   background-color: transparent !important;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
   background-color: rgb(46, 46, 46) !important;
 }
 
 * {
-  
   font-style: normal !important;
   margin: 0;
   padding: 0;
@@ -21,6 +21,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-a{
-text-decoration:none;
+a {
+  text-decoration: none;
 }

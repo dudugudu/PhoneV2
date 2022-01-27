@@ -1,4 +1,9 @@
+import * as Comp from "component/tools/tools";
 function Facebook(params: string) {
-  return <>hello facebook</>;
+  return (
+    <>
+      <Comp.AnimetedApp>hellow Facebook</Comp.AnimetedApp>
+    </>
+  );
 }
 export default Facebook;

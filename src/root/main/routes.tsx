@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Display, Icon } from "../../component/tools/tools";
+import * as Comp from "component/tools/tools";
+
 import { RootState } from "../../store/ducks/rootReducer";
-import { KeyPad } from "./app/keypad/keypad";
-import { Home } from "./home";
+import App from "./app/app";
+import Home from "./home";
 
 function Routers() {
   const dispatch = useDispatch();
@@ -11,12 +12,23 @@ function Routers() {
 
   function WhatPage(name: string) {
     switch (name) {
+      case "bank":
+        return <App.Bank />;
+      case "calculator":
+        return <App.Calculator />;
+      case "chamados":
+        return <App.Chamados />;
+      case "facebook":
+        return <App.Facebook />;
+      case "ifood":
+        return <App.Ifood />;
+      case "instagram":
+        return <App.Instagram />;
+
       case "keypad":
-        return <KeyPad />;
-      case "contatos":
-        return <></>;
-      case "cauladora":
-        return <></>;
+        return <App.KeyPad />;
+      case "whattsapp":
+        return <App.WhattsApp />;
       default:
         return <></>;
     }
@@ -47,44 +59,54 @@ function Routers() {
   return (
     <>
       <div className="Top-Bar-Main">
-        <Display width="50%"></Display>
-        <Display
+        <Comp.Display width="50%"></Comp.Display>
+        <Comp.Display
           width="50%"
           alignItem="center"
           justifyContent="right"
           padding="0 15px 0 0"
         >
-          <Icon margin="0 2px ">signal_cellular_4_bar</Icon>
-          <Icon margin="0 2px ">battery_full</Icon>
-        </Display>
+          <Comp.Icon color="topbar" margin="0 2px ">
+            signal_cellular_4_bar
+          </Comp.Icon>
+          <Comp.Icon color="topbar" margin="0 2px ">
+            battery_full
+          </Comp.Icon>
+        </Comp.Display>
       </div>
       <div className="Viwer-Access-Full">
         {APP && MAIN.what_app !== "" ? WhatPage(MAIN.what_app) : <Home />}
       </div>
       <div className="Rodape-Maind">
-        <Display width="100%" justifyContent="space-evenly" alignItem="center">
-          <Icon
+        <Comp.Display
+          width="100%"
+          justifyContent="space-evenly"
+          alignItem="center"
+        >
+          <Comp.Icon
             onClick={() => {
               CloseApp();
             }}
             fontSize="26px"
             cursor
+            color="baseboard"
           >
             chevron_left
-          </Icon>
-          <Icon
+          </Comp.Icon>
+          <Comp.Icon
             onClick={() => {
               CloseApp();
             }}
             fontSize="20px"
             cursor
+            color="baseboard"
           >
             crop_square
-          </Icon>
-          <Icon fontSize="19px" rot="90" cursor>
+          </Comp.Icon>
+          <Comp.Icon color="baseboard" fontSize="19px" rot="90" cursor>
             menu
-          </Icon>
-        </Display>
+          </Comp.Icon>
+        </Comp.Display>
       </div>
     </>
   );

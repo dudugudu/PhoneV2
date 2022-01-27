@@ -7,9 +7,18 @@ const INITIAL_STATE: styleState = {
   },
   phone_main: {
     what_app: "phone",
-    topBar: { BG_color: "", color: "" },
-    viwer: { BG_color: "", color: "" },
-    baseboard: { BG_color: "", color: "" },
+    topBar: {
+      BG_color: "transparent",
+      color: "#fff",
+    },
+    viwer: {
+      BG_color: "transparent",
+      color: "#fff",
+    },
+    baseboard: {
+      BG_color: "transparent",
+      color: "#fff",
+    },
   },
   open_app: false,
   style_apps: [
@@ -69,7 +78,7 @@ const INITIAL_STATE: styleState = {
       ],
     },
     {
-      appName: "intsagram",
+      appName: "instagram",
       style: [
         {
           typestyle: "light",
