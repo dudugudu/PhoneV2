@@ -1,0 +1,38 @@
+.external-card-conversation {
+  display: flex;
+  margin-top: 4px;
+  width: 100%;
+  height: 66px;
+}
+.external-card-conversation .box-image-profile {
+  display: flex;
+  align-items: center;
+
+  width: 56px;
+  height: 66px;
+  background-color: azure;
+}
+.box-image-profile img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+.external-card-conversation .box-informations {
+  padding: 8px 0;
+  width: 219px;
+  height: 100%;
+  font-size: 12px;
+}
+.box-informations .line-informations {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 25px;
+}
+.box-informations .top {
+  justify-content: space-between;
+}
+.line-informations .name {
+  font-size: 14px;
+  font-weight: 500;
+}
