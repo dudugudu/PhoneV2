@@ -19,7 +19,8 @@
     "paths": {
       "api/*": ["api/*"],
       "component/*": ["component/*"],
-      "store/*": ["store/*"]
+      "store/*": ["store/*"],
+      "types/*": ["interface/*"]
     }
   },
   "include": ["src"]
