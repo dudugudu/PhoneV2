@@ -1,14 +1,15 @@
-export default interface cardCoversatioTypes {
-  data?: dataConversation;
-}
-interface dataConversation {
+export default interface dataConversation {
   name?: string;
-  imagem?: string;
-  visualized?: boolean;
+  numeros?: string;
+  lastMessage?: string;
+  typeMessage?: string;
+  isGroup?: boolean;
+  time?: number;
   deleted?: boolean;
-  isGruop?: boolean;
-  number?: number;
+  visualized?: boolean;
+  recived?: boolean;
 }
+
 /**
  *
  */

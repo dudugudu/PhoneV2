@@ -122,10 +122,15 @@
   background-size: 100%;
   background-position: center;
 }
+.viwer-post {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
 .viwer-post img {
   width: 100%;
 }
 .baseboard-post {
+  padding: 0 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -137,4 +142,10 @@
 }
 .topbar-post {
   height: 35px;
+}
+.base-actions {
+  display: flex;
+}
+.base-actions img {
+  height: 18px;
 }

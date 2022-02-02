@@ -6,5 +6,6 @@ export default interface AppType {
   Ifood?: any;
   Instagram?: any;
   WhattsApp?: any;
+  Settings?: any;
   KeyPad?: any;
 }

@@ -6,7 +6,7 @@ import Chamados from "./chamados/chamados";
 import Facebook from "./facebook/facebook";
 import Ifood from "./ifood/ifood";
 import Instagram from "./instagram/instagram";
-
+import Settings from "./settings/settings";
 import AppType from "./appTypes";
 const App: AppType = {};
 /**
@@ -19,6 +19,7 @@ App.Facebook = Facebook;
 App.Ifood = Ifood;
 App.Instagram = Instagram;
 App.KeyPad = KeyPad;
+App.Settings = Settings;
 App.WhattsApp = WhattsApp;
 /**
  *

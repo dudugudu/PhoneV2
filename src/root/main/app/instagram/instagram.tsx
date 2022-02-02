@@ -12,19 +12,19 @@ function Instagram(params: string) {
               <img
                 style={{ margin: "0 6px 0 0" }}
                 className="icons"
-                src="./static/icons/more.png"
+                src="./static/icons/iconsApp/tools.svg"
                 alt=""
               />
               <img
                 style={{ margin: "0 6px 0 6px" }}
                 className="icons"
-                src="./static/icons/heart.png"
+                src="./static/icons/iconsApp/like.svg"
                 alt=""
               />
               <img
                 style={{ margin: "0 0 0 6px" }}
                 className="icons"
-                src="./static/icons/messenger.png"
+                src="./static/icons/iconsApp/message.svg"
                 alt=""
               />
             </div>
@@ -80,33 +80,39 @@ function Instagram(params: string) {
                 <img src="./static/icons/post.jpg" alt="" />
               </div>
               <div className="baseboard-post">
-                <div className="">
-                  <span
+                <div className="base-actions">
+                  <img
                     style={{ margin: "0 6px 0 0" }}
-                    className="material-icons-outlined"
-                  >
-                    favorite_border
-                  </span>
-                  <span
+                    className="icons"
+                    src="./static/icons/iconsApp/like.svg"
+                    alt=""
+                  />
+                  <img
                     style={{ margin: "0 6px 0 6px" }}
-                    className="material-icons-outlined"
-                  >
-                    favorite_border
-                  </span>
-                  <span
-                    style={{ margin: "0 0px 0 6px" }}
-                    className="material-icons-outlined"
-                  >
-                    favorite_border
-                  </span>
+                    className="icons"
+                    src="./static/icons/iconsApp/chat.svg"
+                    alt=""
+                  />
+                  <img
+                    style={{ margin: "0 0 0 6px" }}
+                    className="icons"
+                    src="./static/icons/iconsApp/send.svg"
+                    alt=""
+                  />
                 </div>
-                <div className="">
-                  <span className="material-icons-outlined">
-                    bookmark_border
-                  </span>
+                <div className="base-actions">
+                  <img
+                    style={{ margin: "0 0 0 6px" }}
+                    className="icons"
+                    src="./static/icons/iconsApp/bookmarker.svg"
+                    alt=""
+                  />
                 </div>
               </div>
-              <div>wadw</div>
+              <div>
+                <h5>90 curtidas</h5>
+                <h5>Galinha </h5>
+              </div>
             </div>
           </div>
           <div className="base-board"></div>

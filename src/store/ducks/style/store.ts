@@ -100,6 +100,17 @@ const INITIAL_STATE: styleState = {
       ],
     },
     {
+      appName: "settings",
+      style: [
+        {
+          typestyle: "light",
+          topBar: { BG_color: "#ffffff", color: "#363636" },
+          viwer: { BG_color: "#ffffff", color: "#363636" },
+          baseboard: { BG_color: "#ffffff", color: "#363636" },
+        },
+      ],
+    },
+    {
       appName: "whattsapp",
       style: [
         {

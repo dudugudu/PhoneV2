@@ -7,10 +7,8 @@
 .external-card-conversation .box-image-profile {
   display: flex;
   align-items: center;
-
   width: 56px;
   height: 66px;
-  background-color: azure;
 }
 .box-image-profile img {
   width: 46px;
@@ -35,4 +33,7 @@
 .line-informations .name {
   font-size: 14px;
   font-weight: 500;
+}
+.line-informations label {
+  font-size: 9px;
 }

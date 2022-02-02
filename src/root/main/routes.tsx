@@ -27,6 +27,8 @@ function Routers() {
 
       case "keypad":
         return <App.KeyPad />;
+      case "settings":
+        return <App.Settings />;
       case "whattsapp":
         return <App.WhattsApp />;
       default:
