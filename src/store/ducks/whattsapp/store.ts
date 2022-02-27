@@ -27,6 +27,9 @@ const INITIAL_STATE: whattsappTypes = {
       recived: true,
     },
   ],
+  style: {
+    whatApp: "chatprivate",
+  },
   conversaTemporaria: [],
 };
 

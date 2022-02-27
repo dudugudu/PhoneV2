@@ -1,0 +1,194 @@
+.topbar-chatprivate {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+}
+.chatprivate-mensage {
+  width: 100%;
+  height: 100%;
+}
+
+.chatprivate-mensage .chat {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2px;
+  height: 518px;
+
+  overflow: auto;
+}
+.ext-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  margin: 10px 0 0 7px;
+  padding: 2px 5px 5px 5px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+.ext-message-right {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  margin: 10px 0 0 calc(25% - 7px);
+  padding: 2px 5px 5px 5px;
+  border-radius: 5px;
+  background-color: #e7ffdb;
+}
+.ballap {
+  display: flex;
+  content: "";
+
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  margin-left: -13px;
+  border-top: 0px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid #ffffff;
+}
+.tringulo-right {
+  display: flex;
+  content: "";
+
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  margin-left: 197px;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #e7ffdb;
+}
+
+.ext-message .number {
+  font-weight: 600;
+  font-size: 12px;
+  margin-top: -8px;
+
+  color: brown;
+}
+.ext-message .text {
+  font-size: 13px;
+}
+.ext-message-right .text {
+  margin-top: -8px;
+  font-size: 13px;
+}
+.ext-message .img {
+  margin-top: 2px;
+
+  width: 100%;
+}
+.ext-message-right .img {
+  margin-top: -7px;
+  width: 100%;
+}
+
+.chatinput {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 35px;
+}
+.chatinput .input {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  width: 230px;
+  height: 35px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  display: flex;
+}
+.audio-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #00a884;
+}
+::-webkit-scrollbar {
+  display: none; /* width of the entire scrollbar */
+}
+.img-audio {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #00a884;
+}
+.int-audio {
+  display: flex;
+  align-items: center;
+  margin-top: -6px;
+}
+.int-audio-left {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+}
+
+/**/
+/* The slider itself */
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+
+  height: 2px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+  border-radius: 5px;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 8px; /* Set a specific slider handle width */
+  height: 8px; /* Slider handle height */
+  border-radius: 50%;
+  background: #04aa6d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04aa6d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e7ffdb;
+}
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  height: 29px;
+  width: 150px;
+}
+.profile-info span {
+  font-size: 10px;
+}
+.profile-info p {
+  font-size: 14px;
+  font-weight: 600;
+}
+.tools-profile {
+  display: flex;
+  width: 90px;
+  height: 29px;
+  align-items: center;
+  justify-content: space-between;
+}
+.slider-left {
+  margin-right: 10px;
+}
