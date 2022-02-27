@@ -104,9 +104,9 @@ const INITIAL_STATE: styleState = {
       style: [
         {
           typestyle: "light",
-          topBar: { BG_color: "#ffffff", color: "#363636" },
-          viwer: { BG_color: "#ffffff", color: "#363636" },
-          baseboard: { BG_color: "#ffffff", color: "#363636" },
+          topBar: { BG_color: "#F2F2F2", color: "#4B4B4B" },
+          viwer: { BG_color: "#F2F2F2", color: "#4B4B4B" },
+          baseboard: { BG_color: "#F2F2F2", color: "#4B4B4B" },
         },
       ],
     },
