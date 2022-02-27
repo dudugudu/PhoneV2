@@ -1,14 +1,29 @@
 import "./phone.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store/ducks/rootReducer";
 import Routers from "./main/routes";
+import Api from "api/index";
 
 import BgApp from "./backgroundApps/BgApp";
+import { useEffect, useState } from "react";
 
 function RootPhone() {
+  const dispatch = useDispatch();
   const BG_Main = useSelector(
     (state: RootState) => state.reducerStyle.phone_main
   );
+  const [Contact, setContact] = useState();
+
+  useEffect(() => {
+    (async () => {
+      const result = await Api.Contact.requestAllContact();
+      setContact(result.data);
+    })();
+  }, []);
+
+  dispatch({ type: "UPDATED_CONTACT", contact: Contact });
+  //const CONTACT = useSelector((state: RootState) => state.reducerSettings);
+
   const MAIN = useSelector((state: RootState) => state.reducerStyle.phone_main);
   const APP = useSelector((state: RootState) => state.reducerStyle.open_app);
   const PS = useSelector(

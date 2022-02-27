@@ -3,3 +3,15 @@
   height: 70px;
   background-color: #008069;
 }
+.whattsapp-topbar-group {
+  width: 100%;
+  height: 40px;
+  background-color: #008069;
+}
+.whattsapp-chat {
+  width: 100%;
+  height: 100%;
+  background-image: url("/src/static/media/background/light.png");
+  background-size: cover;
+  background-color: aqua;
+}

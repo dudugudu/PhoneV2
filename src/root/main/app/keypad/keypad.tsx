@@ -6,6 +6,8 @@ import {
 } from "../../../../component/tools/tools";
 import { Discagem } from "./component/discagem";
 import { Contatos } from "./component/tools";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "store/ducks/rootReducer";
 
 import "./KeyPad.css";
 
@@ -15,6 +17,7 @@ function KeyPad() {
   const { t: translate } = useTranslation();
   const [InFocus, setInFocus] = useState(false);
   const [WhatPage, setWhatPage] = useState("teclado");
+  const CONTACT = useSelector((state: RootState) => state.reducerSettings);
 
   return (
     <>
