@@ -28,6 +28,7 @@ interface style {
  * State types
  */
 export default interface whattsappTypes {
+  subRouter: string;
   appName: string;
   conversaTemporaria?: conversaTemporaria[];
   conversas?: conversas[];

@@ -7,14 +7,14 @@ function WhattsAppBG(params: string) {
   const WPP = useSelector((state: RootState) => state.reducerWhattsApp);
   return (
     <>
-      {WPP.style.whatApp === "home" ? (
+      {WPP.subRouter === "home" ? (
         <div className="whattsapp-topbar"></div>
-      ) : WPP.style.whatApp === "chatprivate" ? (
+      ) : WPP.subRouter === "chatprivate" ? (
         <>
           <div className="whattsapp-topbar-group"></div>
           <div className="whattsapp-chat"></div>
         </>
-      ) : WPP.style.whatApp === "chatgroup" ? (
+      ) : WPP.subRouter === "chatgroup" ? (
         <div className="whattsapp-topbar-group"></div>
       ) : (
         "error"

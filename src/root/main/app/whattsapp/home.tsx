@@ -3,7 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import * as Wpp from "./component";
 import { RootState } from "../../../../store/ducks/rootReducer";
 function HomeWPP() {
+  const dispatch = useDispatch();
   const WPP = useSelector((state: RootState) => state.reducerWhattsApp);
+  function Abrir(whatSubRouter: string) {
+    dispatch({
+      type: "UPDATE_SUBROUTER",
+      subRouter: whatSubRouter,
+    });
+  }
   return (
     <>
       <div className="topbar">
@@ -43,6 +50,7 @@ function HomeWPP() {
               deleted={obj.deleted}
               recived={obj.recived}
               time={obj.time}
+              onClick={() => Abrir("chatprivate")}
             />
           );
         })}

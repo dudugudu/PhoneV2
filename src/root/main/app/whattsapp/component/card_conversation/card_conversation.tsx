@@ -11,11 +11,12 @@ function CardConversation(props: dataConversation): JSX.Element {
     time,
     visualized,
     recived,
+    onClick,
   } = props;
 
   return (
     <>
-      <div className="external-card-conversation">
+      <div className="external-card-conversation" onClick={onClick}>
         <div
           className="box-image-profile pointer"
           onClick={() => {

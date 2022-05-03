@@ -1,5 +1,6 @@
 import whattsappTypes from "./types";
 const INITIAL_STATE: whattsappTypes = {
+  subRouter: "home",
   appName: "facebook",
   conversas: [
     {

@@ -2,7 +2,7 @@ import { MessageTypes } from "interfaces/whattsapp/Message";
 import { Icon } from "component/tools/tools";
 function Message(props: MessageTypes) {
   const { type, number, text, url } = props;
-  let isMy = true;
+  let isMy = false;
   switch (type) {
     case "text":
       if (isMy) {

@@ -9,6 +9,8 @@ const WhattsApp: Reducer<whattsappTypes> = (
   switch (action.type) {
     case "UPDATE_CONVERSAS":
       return { ...state, conversas: action.data };
+    case "UPDATE_SUBROUTER":
+      return { ...state, subRouter: action.subRouter };
 
     default:
       return state;

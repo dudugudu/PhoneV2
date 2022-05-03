@@ -1,4 +1,13 @@
-export default interface dataConversation {
+interface Main {
+  children?: JSX.Element | JSX.Element[] | string;
+  onClick?: any;
+  className?: string | any;
+  onChange?: any;
+  onKeyUp?: any;
+  onKeyDown?: any;
+}
+
+export default interface dataConversation extends Main {
   name?: string;
   numeros?: string;
   lastMessage?: string;

@@ -16,11 +16,11 @@ function WhattsApp(params: string) {
     <>
       <AnimetedApp>
         <div className="whattsapp-main">
-          {WPP.style.whatApp === "home" ? (
+          {WPP.subRouter === "home" ? (
             <HomeWPP />
-          ) : WPP.style.whatApp === "chatprivate" ? (
+          ) : WPP.subRouter === "chatprivate" ? (
             <ChatPrivate />
-          ) : WPP.style.whatApp === "chatgroup" ? (
+          ) : WPP.subRouter === "chatgroup" ? (
             <ChatGroup />
           ) : (
             "error"

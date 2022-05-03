@@ -1,6 +1,7 @@
 import "./chatprivate.css";
 import { Icon } from "component/tools/tools";
 import Message from "../Message/Message";
+
 function ChatPrivate() {
   return (
     <>
@@ -22,6 +23,7 @@ function ChatPrivate() {
           <Message type="text" number="+55 49 9950-8796" text="André" />
           <Message type="image" number="+55 49 9950-8796" text="André" />
           <Message type="audio" number="+55 49 9950-8796" text="André" />
+          <Message type="text" number="+55 49 9950-8796" text="oi" />
         </div>
         <div className="chatinput">
           <div className="input">
