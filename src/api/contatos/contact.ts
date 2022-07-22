@@ -2,8 +2,10 @@
 import ApiAxios from "api/axios/providers";
 const requestAllContact = async () => {
   const res = await ApiAxios.get("contact", {
-    params: { number: "841-795" },
+    params: { permission: "IGS_TI_LVL-2" },
   });
+  console.log(res);
+
   return res;
 };
 const get = () => {};
