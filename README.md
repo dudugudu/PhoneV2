@@ -1,2 +1,3 @@
 # My Template React TrypeScript 
  
+Olá a todos estarei disponibilizando um modelo de celular que começei a trabalhar e acabei deixando parado que quiser continuar a contribuir com o projeto , está disponibilizado, caso tenham alguma duvida atendo no meu discord...
